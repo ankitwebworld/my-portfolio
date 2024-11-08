@@ -87,7 +87,7 @@ async function pushNotification(userId, message, senderId) {
         console.error('Error pushing notification:', error);
     }
 }
-
+ 
 async function sendMail(email, subject, emailText) {
     const mailOptions = {
         from: adminEmail,

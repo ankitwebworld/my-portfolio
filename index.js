@@ -1829,21 +1829,13 @@ app.get("/auth/google/callback", async (req, res) => {
         expiresIn: "1h",
       });
 
-     
-      // res.cookie("userToken", token, {
-      //   expires: new Date(Date.now() + 9000000),
-      //   httpOnly: true,
-      //   secure: process.env.produti,
-      //   sameSite: 'lax',
-      // });
-
       res.cookie("userToken", token, {
         expires: new Date(Date.now() + 9000000),
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
+        secure: true,
+        sameSite: 'lax', 
       });
-      
+       
       req.session.userId = newUser._id;
       res.redirect("/enter-password");
     }
@@ -1851,8 +1843,8 @@ app.get("/auth/google/callback", async (req, res) => {
     console.error("Error exchanging authorization code for token:", error);
     res.status(500).send("Error exchanging authorization code for token");
   }
-});
-
+});   
+ 
 
 app.get("/enter-password", isUserAuthenticated, async (req, res) => {
   res.render("./UserLogin/password-entry-form");
