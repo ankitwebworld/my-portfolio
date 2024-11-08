@@ -1835,7 +1835,7 @@ app.get("/auth/google/callback", async (req, res) => {
       res.cookie("userToken", token, {
         expires: new Date(Date.now() + 9000000),
         httpOnly: true,
-        secure: true,
+        secure: false,
         sameSite: 'lax', 
       });
        
