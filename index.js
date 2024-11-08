@@ -1697,6 +1697,7 @@ app.get("/auth/google", (req, res) => {
   res.redirect(googleAuthUrl);
 });
 
+
 app.get("/auth/google/callback", async (req, res) => {
   try {
     const code = req.query.code;
@@ -1748,6 +1749,18 @@ app.get("/auth/google/callback", async (req, res) => {
     res.status(500).send("Error exchanging authorization code for token");
   }
 });   
+
+
+
+// i have made this for testing because many times after goggle login user is not able to add there password thats why this is for testing purposes 
+
+// app.get("/deleteTestOnly",async(req,res)=>{
+//    const user = await Users.findOneAndDelete({email:''});
+//    if(user)
+//    {return res.json({message:'user deleted' + JSON.stringify(user)});}
+// res.json({error:'user not found'})
+// });
+
 
 app.get("/enter-password", isUserAuthenticated, async (req, res) => {
   res.render("./UserLogin/password-entry-form");
