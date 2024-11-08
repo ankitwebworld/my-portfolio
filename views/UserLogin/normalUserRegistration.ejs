@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./StyleSheet/userAccountRegistration.css">
+    <title>User Registration</title>
+ </head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>User Registration</h1>
+        </div>
+        <div class="form-container">
+            <form id="userAccountRegistration">
+                <div class="li">
+                    <div class="singleblock">
+                        <label for="Fname">First Name: </label>
+                        <input type="text" name="Fname" id="Fname">
+                    </div>
+                    <div class="singleblock">
+                        <label for="Lname">Last Name: </label>
+                        <input type="text" name="Lname" id="Lname">
+                    </div>
+                </div>
+                <div class="li">
+                    <div class="singleblock">
+                        <label for="userId">phone No. : </label>
+                        <input type="text" name="userId" id="userId">
+                    </div>
+                    <div class="singleblock">
+
+                        <label for="email">Email : </label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                </div>
+
+                <div class="li">
+                    <div class="singleblock">
+                        <label for="password">Password : </label>
+                        <input type="password" name="password" id="password1">
+                        <p class="pass-message"></p>
+                    </div>
+                    <div class="singleblock">
+                        <label for="password">Re-enter Password : </label>
+                        <input type="password" name="password" id="password2">
+                        <p class="pass-message"></p>
+                    </div>
+                </div>
+                <div class="li submitTag">
+                    <div class="singleblock ">
+                        <input type="submit" name="submit" id="submit" value="Submit">
+                    </div>
+                    
+                </div>
+                
+                <p class="or">OR</p>
+                
+                <div id="googleSignInButton">
+                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" height="24" width="24">
+
+                   <p> Sign in with Google</p>
+                </div>
+              </form>
+        </div>
+    </div>
+    <script src="./Scripts/normalUserRegistration.js"></script>
+
+   
+   
+</body>
+
+</html>

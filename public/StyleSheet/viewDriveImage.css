@@ -1,0 +1,120 @@
+/* StyleSheet/viewDriveImage.css */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 28px;
+    color: #710303;
+    background: aliceblue;
+}
+
+/* Center the image container */
+#imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Style each image */
+#imageContainer img {
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+/* Hover effect on images */
+#imageContainer img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Styles for form container */
+.form-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #00ffff12;
+    border-radius: 13px;
+}
+
+/* Styles for form elements */
+.formData {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Styles for input fields */
+.formData input[type="hidden"],
+
+.formData input[type="submit"],
+.formData input[type="button"] {
+    margin: 5px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.formData input[type="text"]{
+    width: 100%;
+    margin: 5px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    text-align: center;
+
+}
+/* Styles for submit button */
+.formData input[type="submit"] {
+    background-color: #007bff; /* Default background color */
+    color: #fff; /* Text color */
+}
+
+/* Hover effect for submit button */
+.formData input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+/* Styles for update button */
+.formData input[name="Update"] {
+    background-color: #28a745; /* Default background color */
+    color: #fff;
+    padding: 9px 15px;
+    font-weight: bolder;
+}
+
+/* Hover effect for update button */
+.formData input[name="Update"]:hover {
+    background-color: #218838; /* Darker background color on hover */
+}
+
+/* Styles for delete button */
+.formData input[name="Delete"] {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 9px 15px;
+    font-weight: bolder;
+}
+
+/* Hover effect for delete button */
+.formData input[name="Delete"]:hover {
+    background-color: #c82333; /* Darker background color on hover */
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./StyleSheet/userLogin.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title-text">
+      <div class="title login">Admin Login</div>
+      <div class="title signup">User Login</div>
+    </div>
+    
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="login" >
+        <input type="radio" name="slide" id="signup"checked>
+        <label for="login" class="slide login">Login</label>
+        <label for="signup" class="slide signup">Login</label>
+        <div class="slider-tab"></div>
+      </div>
+      <div class="form-inner">
+        <form action="#" class="login">
+          <div class="field">
+            <input type="text" placeholder="User Id" id="userId" required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Password" id="password" required>
+          </div>
+
+          <div class="loading">
+            <span class="loader"></span>
+            <p id="message"></p>
+          </div>
+
+          <div class="pass-link"><a href="/admin/admin-forgot-password">Forgot password?</a></div>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="Login" id="loginButton">
+          </div>
+          <div class="signup-link">Not a member? <a href="/userRegistration">Sign-in</a></div>
+        </form>
+        <form class="signup" id="normal-user-form">
+          <div class="field">
+            <input type="text" placeholder="Email Address Or Phone Number" id="normalUserId" >
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Password" id="normalUserPassword" >
+           
+          </div>
+          
+          <div class="pass-link"><a href="/user-forgot-password">Forgot password?</a></div>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+           
+            <input type="submit" value="Login" id="normal-user-submit">
+
+          </div>
+           <div class="signup-link">Not a member? <a href="/userAccountRegistration">Sign-in</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./Scripts/login.js"></script>
+
+
+</body>
+
+</html>

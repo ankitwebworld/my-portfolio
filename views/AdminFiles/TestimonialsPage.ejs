@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Testimonials Page</title>
+    <link rel="stylesheet" href="/StyleSheet/TestimonialsPage.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <section class="sticky">
+        <div class="bubbles">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="inner-form-container">
+                <form id="form-Container">
+                    <label for="clientName">Client Name : </label>
+                    <input type="text" name="clientName" id="clientName">
+                    <label for="clientTitle">Client Title :</label>
+                    <input type="text" name="clientTitle" id="clientTitle">
+                    <label for="testimonialContent">Testimonial Content :</label>
+                    <input type="text" name="testimonialContent" id="testimonialContent">
+                    <label for="projectDetails">Project Details :</label>
+                    <input type="text" name="projectDetails" id="projectDetails">
+                    <label for="date">Date :</label>
+                    <input type="date" name="date" id="date">
+                    <label for="markedByAnkit">Marked By Ankit ..? :</label>
+                    <input type="text" name="markedByAnkit" id="markedByAnkit">
+                    <label for="replybyAnkit">Replyed By Ankit :</label>
+                    <input type="text" name="replybyAnkit" id="replybyAnkit">
+                    <input type="submit" name="send" id="submit" value="Submit">
+
+                </form>
+            </div>
+        </div>
+        <div class="displayTestimonials">
+            <span class="loader"></span>
+            <p id="Server-error"></p>
+            <div class="box">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/APIs/AdminScripts/TestimonialsPage.js"></script>
+</body>
+
+</html>

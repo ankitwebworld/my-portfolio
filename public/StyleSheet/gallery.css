@@ -1,0 +1,135 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #5f55554d;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sliding-image-window {
+    /* position: relative; */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 100%;
+    /* margin-right: 20px; */
+}
+
+.gallery-item:last-child {
+    margin-right: 0;
+}
+
+.gallery-item img {
+
+    width: 50%;
+    display: flex;
+    margin: 2px auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: #333;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+.description{
+    text-align: center;
+  
+    background-color: #9ab1e666;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    margin: 12px 8px;
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #9ab1e666;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 18px;
+}
+
+
+@media (max-width: 768px) {
+   .container{
+    width: 400px;
+   }
+   button{
+    bottom: 10px;
+   }
+}
+/* CSS for bottom images container */
+.bottom-all-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+/* CSS for each image container */
+.bottom-all-images .image-container {
+    width: 400px; 
+    height: 400px; 
+    margin: 10px;
+    text-align: center;
+}
+
+/* CSS for image inside the container */
+.bottom-all-images .image-container img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS for caption below the image */
+.bottom-all-images .image-container p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
+.heading{
+    margin: 0;
+    padding: 12px;
+    text-align: center;
+    background: #b0b0d8b8;
+    box-shadow: 0 2px 4px #0000ff6b;
+}

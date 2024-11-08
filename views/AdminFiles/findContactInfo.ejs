@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/StyleSheet/findContactInfo.css">
+    <link rel="stylesheet" href="/StyleSheet/showContactInfo.css">
+    <title>Find Info</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="head">
+                <h1>
+                    Search User Information
+                </h1>
+            </div>
+            <div class="logout">
+          <a href="/logout"> <button> Logout</button></a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div class="searchMethods">
+            <h1>Get Contact Information by</h1>
+            <form id="userData">
+                <label for="ReferenceId">Reference Id : </label>
+                <input type="text" name="ReferenceId">
+                <label for="emailAddress">Email : </label>
+                <input type="email" name="emailAddress">
+                <label for="phoneNo">Contact : </label>
+                <input type="text" name="phoneNo">
+                <label for="date">Date : </label>
+                <input type="date" name="date">
+                <label for="name">Name : </label>
+                <input type="text" name="name">
+
+                <input type="submit" value="Search" id="getInfo">
+            </form>
+        </div>
+        <div class="userData" id="showUserData">
+
+        </div>
+        <div class="contact-info">
+        
+        </div>
+     
+       <p id="dataNotFound"></p>
+       <p id="feedback"></p>
+    </div>
+    <p id="feedback"></p>
+    <script src="/APIs/AdminScripts/findContactInfo.js"></script>
+    <script src="/APIs/AdminScripts/showContactInfo.js"></script>
+
+</body>
+
+</html>

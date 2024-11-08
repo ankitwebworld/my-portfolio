@@ -1,0 +1,60 @@
+/* StyleSheet/resume.css */
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.resume {
+    text-align: center;
+    margin: 50px;
+}
+
+.resume h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.resume h3 {
+    font-size: 18px;
+    color: #555;
+}
+
+.resume p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.resume button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resume button:hover {
+    background-color: #c0392b;
+}

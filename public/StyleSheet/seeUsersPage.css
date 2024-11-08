@@ -1,0 +1,93 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+#getUserInfo{
+    background-color: #f0f0f0;
+    padding: 12px;
+}
+.left-container,
+.right-container {
+    width: 45%;
+}
+
+/* Left Container Styles */
+.left-container {
+    
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.left-container-element-search {
+    margin-bottom: 20px;
+}
+
+.left-container-element-search label {
+    font-weight: bold;
+}
+
+.left-container-element-search input[type="text"],
+.left-container-element-search input[type="submit"] ,
+.left-container-element-search input[type="button"]{
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.left-container-element-search input[type="submit"],.left-container-element-search input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.left-container-user-data {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Right Container Styles */
+/* .right-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+} */
+
+.user-info {
+    margin: 0 !important;
+     padding: 0 !important;
+}
+
+/* Head Styles */
+.head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.head h1 {
+    color: #333;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-container,
+    .right-container {
+        width: 100%;
+    }
+}

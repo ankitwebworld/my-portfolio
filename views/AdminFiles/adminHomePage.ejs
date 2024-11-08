@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/StyleSheet/adminHomePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Poppins:wght@200;400&display=swap"
+        rel="stylesheet">
+    <title>Admin DeshBoard</title>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="leftSection">
+            <div class="leftInnerSection">
+                <div class="imageAndOption">
+                    <div class="ImageSection">
+
+                        <img id="myImage" src="/get-logo-from-drive/Ankitpicture.png" alt="Image">
+                        <form id="uploadImage">
+                            <label id="marker-lebel" for="imageInput">
+                                <i class="fas fa-pen"></i>
+                            </label>
+                            <input type="file" id="imageInput" style="display: none;">
+
+                        </form>
+
+                    </div>
+
+                </div>
+                <div class="main">
+                    <ul>
+                         <li class="for-underline1"> Home</li> 
+                        <hr>
+                        <!-- <li class="for-underline">Contact</li> -->
+                        <a href="/admin/getContactInfoPage">  <li class="for-underline">Contact</li> </a>
+                        <hr>
+                        <a href="/admin/AdminAbout"><li class="for-underline">About</li></a>
+                        <hr>
+                        <a href="/admin/AdminServices"><li class="for-underline">Service</li></a>
+                        
+                        <hr>
+                        <a href="/admin/adminDeshBoard"><li class="for-underline">DeshBoard</li></a>
+                        
+                        <hr>
+                        <a href="/admin/addNotifications"><li class="for-underline">add notification</li></a>
+                        
+                        <hr>
+                        <a href="/admin/Privacy-and-Security"><li class="for-underline">update Privacy and Security</li></a>
+                        
+                        <hr>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="leftInnerBottonSection">
+                <p>hiiii</p>
+            </div> -->
+        </div>
+        <div class="rightSection">
+            <div class="topAlign">
+                <h3 class="web_name">ankitpatel.com</h3>
+                <button id="LogOutButton">LogOut</button>
+            </div>
+            <div class="middleSection">
+                
+                <div class="middleContant">
+                  
+                    <h1 id="dynamicText">WELCOME...      </h1>
+                    <h2>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Ankit.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+                          <span class="wrap"></span>
+                        </a>
+                      </h2>
+                     <a href="/admin/adminDeshBoard"> <button id="mainButton">Go To Main</button></a>
+                </div>
+
+                <img src="/get-logo-from-drive/Ankitpicture.png" alt="" id="imageGift">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="loader">
+        <img src="/Images/loader.gif" alt="">
+    </div>
+    <script src="/APIs/AdminScripts/adminHomePage.js"></script>
+
+</body>
+
+</html>

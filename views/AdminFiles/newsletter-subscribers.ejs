@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Subscribers</title>
+    <link rel="stylesheet" href="/StyleSheet/newsletter-subscribers.css"> <!-- You can create a CSS file for styling -->
+</head>
+<body>
+    <h1>Newsletter Subscribers</h1>
+    <div class="sendnews">
+        <div class="button">
+            <button id="subscriber-form-button">Add News </button><button id="restrict-subscriber">Restrict subscriber from news or Allow</button>
+        </div>
+        <div id="subscribers-news-form">
+            <form id="newsForm">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required><br><br>
+        
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" placeholder="use tags" required></textarea><br><br>
+        
+                <label for="style">Style:</label><br>
+                <textarea id="style" name="style" rows="4" cols="50"  placeholder="use style" required></textarea><br><br>
+        
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        
+        <div id="restrict-subscriber-news-form">
+            <form id="restrict-newsForm">
+                <label for="userId">User Id:</label>
+                <input type="text" id="userId" name="userId" placeholder="Email id">
+                <label for="allow-or-restrict">allow-or-restrict</label>
+                <select name="allow-or-restrict" id="allow-or-restrict">
+                    <option value="" selected disabled>---select---</option>
+                    <option value="true">YES</option>
+                    <option value="false">NO</option>
+                </select>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        
+        
+
+    </div>
+    <div id="subscriberList"></div>
+
+    <script src="/APIs/AdminScripts/newsletter-subscribers.js">
+       
+    </script>
+</body>
+</html>

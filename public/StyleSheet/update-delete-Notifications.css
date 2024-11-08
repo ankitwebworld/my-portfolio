@@ -1,0 +1,78 @@
+/* update-delete-Notifications.css */
+
+.notification-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .notification-list {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .notification-list--unread {
+    background-color: #f0f0f0;
+  }
+  
+  .notification-list_content {
+    display: flex;
+  }
+  
+  .notification-list_img {
+    margin-right: 10px;
+  }
+  
+  .notification-list_img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .notification-list_detail {
+    flex-grow: 1;
+  }
+  
+  .notification-list_detail p {
+    margin: 5px 0;
+  }
+  
+  .notification-list_feature-img {
+    margin-top: 10px;
+  }
+  
+  .notification-list_feature-img img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  .update-delete-buttons{
+    display: flex;
+    /* width: 141px; */
+    justify-content: center;
+    align-items: center;
+  }
+  .container
+  {
+    width: 100% !important;
+  }
+  .notification-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  input[name ='update']
+  {
+    background-color: green !important  ;
+  }
+
+  .right-container{
+    display: block;
+    margin: 1px auto;
+    background: #fff;
+    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    padding: 12px;
+    
+
+  }

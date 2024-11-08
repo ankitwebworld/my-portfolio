@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Form</title>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400">
+    <link rel="stylesheet" href="../../StyleSheet/gallery-form.css">
+</head>
+<body>
+    <div class="container">
+        <div id="form-container">
+            <h3>Add Information about Gallery</h3>
+            <form id="formdata" enctype="multipart/form-data">
+                <div class="text-data">
+                    <label for="galleryName">Gallery Name:</label>
+                    <input type="text" id="galleryName" name="galleryName">
+                </div>
+                <div class="text-data">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
+                <div class="text-data">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div class="text-data">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="image-data">
+                    <label for="galleryImage" id="upload">Upload Image:</label>
+                    <input type="file" id="galleryImage" name="galleryImage" accept="image/*" multiple>
+                </div>
+                <div class="button-data">
+                    <button type="submit">Add Gallery</button>
+                    <p id="message" style="display: none;"></p>
+                </div>
+            </form>
+        </div>
+        <div class="available-data">
+            <h3>Available Galleries</h3>
+            <div id="ifError" style="display: none;">
+                <h2 id="errormessage"></h2>
+            </div>
+            <div id="available-data-container"> 
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/gallery-form.js"></script>
+    
+</body>
+</html>

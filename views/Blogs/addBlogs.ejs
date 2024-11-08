@@ -1,0 +1,93 @@
+<!-- views/addInformation.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Information</title>
+    <link rel="stylesheet" href="/StyleSheet/addBlogs.css">
+    <link rel="stylesheet" href="/StyleSheet/showBlogs.css">
+</head>
+
+<body>
+    <div class="topHeading">
+        <h1>Blogs</h1>
+     <div class="option">
+            <p id="refresh">Refresh page</p>
+             <p id="showHideForm">Show Blog Form</p>
+            <p id="deleteBlog">Delete Blog</p>
+            <p id="UpdateBlog">Update Blogs</p>
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="delete-blog hidden">
+            <h1>Delete Blogs</h1>
+
+            <div class="loader"></div>
+
+            <p id="deleteMessage"></p>
+
+            <select name="blog-delete" id="delete"></select>
+        </div>
+
+        <div class="update-blog hidden">
+            <h1>Update Blogs</h1>
+            <div class="loader2"></div>
+            <p id="updateMessage"></p>
+            <select name="blog-update" id="update"> </select>
+              
+        </div>
+       
+        <div class="formContainer hidden">
+            <h1>Add Information</h1>
+            
+            <form id="addInformation"  enctype="multipart/form-data">
+                <input type="hidden" >
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" class="invalid-input">
+
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" class="invalid-input"></textarea>
+
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category">
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+
+                <label for="photos">Photos (URLs, separated by commas):</label>
+                <input type="text" id="photos" name="photos">
+
+                <label for="hashtags">Hashtags (separated by commas):</label>
+                <input type="text" id="hashtags" name="hashtags">
+
+                <label for="codes">Codes (formatted text):</label>
+                <textarea id="codes" name="codes"></textarea>
+
+                <label for="image" >Upload Image:</label>
+                <input type="file" id="image" name="image" multiple>
+
+                <button type="submit" id="submit">Add Information</button>
+            </form>
+        </div>
+        <div class="BlogsContainer">
+            <h1>Ankit's Blogs</h1>
+
+            <section id="blogsList"></section>
+        </div>
+
+     </div> 
+    <p id="displayMessage"></p>
+    <a href="/">Go Back</a>
+    <script src="/Scripts/addblogs.js"></script>
+    <script src="/Scripts/showBlogs.js"></script>
+    <script src="/Scripts/handel-blogs-update-delete.js"></script>
+</body>
+
+</html>

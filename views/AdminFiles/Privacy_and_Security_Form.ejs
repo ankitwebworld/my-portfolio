@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy and Security Form</title>
+    <link rel="stylesheet" href="/StyleSheet/Privacy-and-Security.css">
+   
+</head>
+<body>
+    <div class="form-container">
+        <h1>Privacy and Security Form</h1>
+        <form id="Privacy-and-Security-Form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" >
+            
+            <label for="mainText">Main Text:</label>
+            <textarea id="mainText" name="mainText" ></textarea>
+            
+            <label for="additionalInfo">Additional Information:</label>
+            <textarea id="additionalInfo" name="additionalInfo"></textarea>
+            
+            <label for="videos">Videos:</label>
+            <input type="text" id="videos" name="videos" placeholder="Enter video URLs separated by commas">
+            
+            <label for="policies">Policies:</label>
+            <input type="text" id="policies" name="policies" placeholder="Enter video URLs separated by commas">
+            
+            <label for="relatedLinks">Related Links:</label>
+            <div id="relatedLinks">
+                <div class="link">
+                    <input type="text" name="relatedLinkTitle[]" placeholder="Title" >
+                    <input type="url" name="relatedLinkURL[]" placeholder="URL" >
+                </div>
+            
+            </div>
+            <button type="button" id="addRelatedLink">Add Related Link</button>
+            
+            <label for="FAQs">Frequently Asked Questions:</label>
+            <div id="FAQs">
+                <div class="question">
+                    <input type="text" name="question[]" placeholder="Question" >
+                    <input type="text" name="answer[]" placeholder="Answer" >
+                </div>
+                
+            </div>
+            <button type="button" id="addFAQ">Add FAQ</button>
+            
+            <label for="importantNotes">Important Notes:</label>
+            <textarea id="importantNotes" name="importantNotes"></textarea>
+            
+            <button type="submit">Submit</button>
+            <p id="feedback"></p>
+        </form>
+        
+    </div>
+    <script src="/APIs/AdminScripts/Privacy-and-Security.js"></script>
+</body>
+</html>

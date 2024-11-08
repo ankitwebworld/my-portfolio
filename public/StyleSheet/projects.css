@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+*{
+     margin: 4px;
+     padding: 4px;
+}
+h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3498db;
+    color: white;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+   top: 0;
+   z-index: 1;
+}
+
+.project {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 92px 12px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.02);
+}
+
+.project img {
+    width: 75%;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    margin-top: 22px;
+}
+
+h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    color: #3498db;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+h3{
+    margin: 5px 1px;
+}
+::-webkit-scrollbar{
+    display: none;
+    overflow: hidden;
+}

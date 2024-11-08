@@ -1,0 +1,122 @@
+/* showBlogs.css */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mypicture{
+    border-radius: 50%;
+    width: 67px;
+    height: 67px;
+    margin: 2px;
+    display: inline-block;
+}
+.head{
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#blogsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.blog {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog:hover {
+    transform: scale(1.02);
+}
+
+.Heading {
+    margin-bottom: 15px;
+    display: flex;
+
+}
+.bottomTitle{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-top: 0px;
+}
+.title{
+    margin-top: 5px;
+    margin-bottom: 1px;
+}
+.date-location{
+    display: flex;
+}
+ p{
+   padding: 5px 5px;
+   margin: 0%;
+    
+}
+
+.title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contant {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.category, .location, .date {
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.photos, .hashtags, .codes {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #dee2e6;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.codes{
+    height: 200px;
+    width: 100%;
+    font-family: sans-serif;
+    padding-left: 11px;
+    padding-top: 11px;
+}
+img {
+    pointer-events: none;
+    user-select: none;
+}

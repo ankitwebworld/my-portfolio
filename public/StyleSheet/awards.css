@@ -1,0 +1,85 @@
+/* Add this to your awards.css file */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1E90FF; /* Dodger Blue */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1{
+    color: white;
+}
+
+ h2 {
+    color: #1E90FF;
+}
+
+.awards-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.award {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #1E90FF;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    /* position: fixed; */
+    bottom: 0;
+    /* width: 100%; */
+}
+
+
+
+.img{
+    display: flex;
+    justify-content: space-around;
+    height: 33.5rem;
+}
+
+@media only screen and (max-width:675px) {
+    .img{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        height: 33.5rem;
+        align-content: center;
+    }
+}

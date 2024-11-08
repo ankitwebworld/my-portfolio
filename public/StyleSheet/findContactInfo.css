@@ -1,0 +1,95 @@
+/* findContactInfo.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head h1 {
+    margin: 0;
+}
+
+.logout button {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin: 20px;
+        /* justify-content: center; */
+    /* align-items: center; */
+   /* height: 80vh; */
+}
+
+.searchMethods {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+label {
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #5bc0de;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.userData {
+    margin-left: 2rem;
+}
+
+#feedback{
+    display: inline;
+    position: fixed;
+    padding: 12px;
+    font-weight: bolder;
+    border-radius: 12px;
+    top: 12px;
+    right: 12px;
+    display: none;
+}
+/* Add more styles as needed */

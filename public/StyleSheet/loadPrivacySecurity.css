@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1 {
+    color: #333;
+}
+.section {
+    margin-bottom: 30px;
+}
+.section h2 {
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.section p {
+    margin-bottom: 15px;
+}
+.list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.list-item {
+    margin-bottom: 5px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.section p {
+    margin-bottom: 15px;
+}
+
+.list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.list-item {
+    margin-bottom: 5px;
+}
+
+.link-item {
+    margin-bottom: 5px;
+}
+
+.link-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link-item a:hover {
+    text-decoration: underline;
+}
+.formattedPolicies{
+    margin: 12px;
+}
+.list-item {
+    margin-bottom: 5px;
+    /* Add other styles for list items */
+    /* For example: */
+    color: #333;
+}
+
+.list-item h4 {
+    /* Add styles for headings within list items */
+    /* For example: */
+    color: #007bff; /* Blue color */
+}
+
+.list-item a {
+    /* Add styles for links within list items */
+    /* For example: */
+    color: #007bff; /* Blue color */
+    text-decoration: none;
+}
+
+.list-item a:hover {
+    /* Add styles for links on hover */
+    /* For example: */
+    text-decoration: underline;
+}
+
+.formattedPolicies {
+    /* Add styles for formatted policies */
+    /* For example: */
+    font-style: italic;
+    color: #666;
+}

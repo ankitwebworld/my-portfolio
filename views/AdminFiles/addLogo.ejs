@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' https://drive.google.com https://developers.google.com ;">
+
+    <link rel="stylesheet" href="/StyleSheet/addLogo.css">
+
+    <title>Image Upload Form</title>
+</head>
+<body>
+    <div>
+        <h2>Select Files to Upload To Google Drive</h2>
+        <p style="display: none;"></p>
+        <form>
+            <div class="custom-file-input">
+                <input id="fileInput" type="file" name="Files" required multiple />
+                <label for="fileInput" id="fileInputLabel">Select Files</label>
+            </div>
+            <button id="myButton" type="submit">Submit</button>
+        </form>
+    </div>
+</body> 
+<script src="/APIs/AdminScripts/addLogo.js"></script>
+</html>

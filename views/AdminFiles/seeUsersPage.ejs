@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/StyleSheet/seeUsersPage.css">
+    <link rel="stylesheet" href="/StyleSheet/userHomePage.css">
+    <title>See Users</title>
+</head>
+<body>
+    <div class="head"><h1>See users</h1></div>
+    <div class="container">
+        <div class="left-container">
+            <div class="left-container-element-search">
+                <form id="getUserInfo">
+                    <label for="userId">User Id : </label>
+                    <input type="text" placeholder="Enter user Id" name="userId">
+                    <label for="userEmail">Email Id : </label>
+                    <input type="text" placeholder="Enter user Email" name="userEmail">
+                    <div class="button">
+                        <input type="submit" value="Search">
+                        <input type="button" value="Update">
+                    </div>
+                </form>
+                
+            </div>
+            <div class="left-container-user-data"></div>
+
+        </div>
+        <div class="right-container" id="show-data">
+
+        </div>
+    </div>
+    
+    <script src="/APIs/AdminScripts/seeUsersPage.js"></script>
+</body>
+</html>

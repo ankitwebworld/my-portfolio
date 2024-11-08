@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/StyleSheet/add-homepage-info.css">
+
+    <title>Add Homepage Informations</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Add Homepage Information</h2>
+    <form id="formData">
+        <div class="form-group">
+            <input type="text" id="contactTelPhoneNo" name="contactTelPhoneNo" required>
+            <label for="contactTelPhoneNo">Contact Telephone Number</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="contactEmail" name="contactEmail" required>
+            <label for="contactEmail">Contact Email</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="GoToWhatsappChat" name="GoToWhatsappChat">
+            <label for="GoToWhatsappChat">Go to WhatsApp Chat</label>
+        </div>
+
+        <div class="form-group">
+            <textarea id="myInformation" name="myInformation" rows="4" required></textarea>
+            <label for="myInformation">My Information</label>
+        </div>
+
+        <div class="form-group">
+            <textarea id="footerData" name="footerData" rows="4" required></textarea>
+            <label for="footerData">Footer Data</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="mapeUrl" name="mapeUrl">
+            <label for="mapeUrl">Map URL</label>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+    <script src="/APIs/AdminScripts/add-homepage-info.js"></script>
+
+</body>
+</html>
+

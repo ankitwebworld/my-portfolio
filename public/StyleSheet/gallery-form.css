@@ -1,0 +1,270 @@
+/* Add this to your gallery-form.css */
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+#form-container {
+    max-width: 400px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-data label,.image-data label {
+    color: #3498db;
+}
+
+.text-data input,
+.text-data textarea,.image-data input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+}
+
+.text-data textarea {
+    resize: vertical;
+}
+
+.button-data button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-data button:hover {
+    background-color: #2980b9;
+}
+
+.available-data {
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Additional styling for the available galleries section */
+.available-data h3 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.image-data input{
+    visibility: hidden;
+    display: none;
+}
+#upload{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    display: block;
+}
+/* Add more styles as needed */
+
+
+
+.gallery-info {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.gallery-info img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.gallery-info p {
+    margin: 5px 0;
+}
+
+
+#available-data-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+/* Icon set - http://ionicons.com/ */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+figure.snip1193 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 220px;
+  width: 100%;
+  background: #000000;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+figure.snip1193 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+figure.snip1193 img {
+  opacity: 1;
+  width: 100%;
+  display: block;
+}
+figure.snip1193 figcaption {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 10px 12px 5px;
+  position: absolute;
+}
+figure.snip1193 h4,
+figure.snip1193 i {
+  color: #ffffff;
+}
+figure.snip1193 h4 {
+  font-weight: 400;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+figure.snip1193 i {
+  font-size: 15px;
+}
+figure.snip1193 a {
+  text-decoration: none;
+}
+figure.snip1193 .bottom-left,
+figure.snip1193 .bottom-right {
+  position: absolute;
+  bottom: 5px;
+  opacity: 0;
+}
+figure.snip1193 .bottom-left {
+  left: 5px;
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+figure.snip1193 .bottom-right {
+  right: 5px;
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+}
+figure.snip1193:hover img,
+figure.snip1193.hover img {
+  opacity: 0.6;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+figure.snip1193:hover figcaption .bottom-left,
+figure.snip1193.hover figcaption .bottom-left,
+figure.snip1193:hover figcaption .bottom-right,
+figure.snip1193.hover figcaption .bottom-right {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+
+input[type="button"]
+{
+    margin: 2px auto;
+    display: flex;
+    border: pink;
+    background-color: #0599fb57;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 7px;
+}
+.box{
+  border: 1px solid pink;
+  border-radius: 6px ;
+  padding: 3px 8px;
+  margin: 4px 7px;
+  background-color: rgba(0, 0, 255, 0.057);
+}
+.delete-update{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.delete-update input{
+  padding: 5px;
+  border-radius: 6px;
+  width: 80%;
+  box-sizing: border-box;
+  border: 2px solid pink;
+  text-align: center;
+  margin: 5px;
+  outline: none;
+}
+
+input[type="text"]:focus{
+  color: blue;
+  border: 2px solid blue;
+  transition: all 0.3s ease;
+}
+.update-button{
+  background: #1bff1bd4;
+  padding: 9px 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.delete-button{
+  text-align: center !important;
+  background-color: red !important;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+}

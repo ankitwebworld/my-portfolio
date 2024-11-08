@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/StyleSheet/addNotifications.css">
+  <title>Notification Form</title>
+  
+</head>
+<body>
+  <h2>Create a Notification</h2>
+  <form id="notificationForm">
+    <!-- Sender Information -->
+    <label for="senderUsername">Sender Username:</label>
+    <input type="text" id="senderUsername" value="admin" name="senderUsername">
+    <span id="senderUsernameError" class="error"></span>
+
+    <label for="senderProfilePicture">Sender Profile Picture URL:</label>
+    <input type="text" id="senderProfilePicture" value="/Images/Alogo.png" name="senderProfilePicture">
+    <span id="senderProfilePictureError" class="error"></span>
+
+    <!-- Notification Details -->
+    <label for="action">Action:</label>
+    <input type="text" id="action" name="action">
+    <span id="actionError" class="error"></span>
+
+    <label for="target">Target:</label>
+    <input type="text" id="target"  name="target"  value='<a href=""></a>'></a>
+    <span id="targetError" class="error"></span>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+    <span id="messageError" class="error"></span>
+
+    <label for="createdAt">Created At (leave blank for default):</label>
+    <input type="datetime-local" id="createdAt" name="createdAt">
+
+    <label for="featureImage">Feature Image URL:</label>
+    <input type="text" id="featureImage" name="featureImage">
+    <span id="featureImageError" class="error"></span>
+
+    <!-- Read Status -->
+    <label for="read">Read (default is false):</label>
+    <input type="checkbox" id="read" name="read">
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Notification</button>
+  </form>
+  <script src="/Scripts/addNotifications.js"></script>
+  
+</body>
+</html>
