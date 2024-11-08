@@ -41,6 +41,7 @@ const CLIENT_ID = await getData('GoogleManagement', 'CLIENT_ID');
 const REDIRECT_URI = await getData('GoogleManagement', 'REDIRECT_URI');
 
 // const REDIRECT_URI = 'http://localhost:3000/auth/google/callback';
+
 console.log(REDIRECT_URI)
 const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=openid%20email%20profile%20phone`;
 

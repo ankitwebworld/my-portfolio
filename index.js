@@ -87,8 +87,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
-  if (process.env.NODE_ENV === 'production' && req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect('https://' + req.headers.host + req.url);
+  if (
+    process.env.NODE_ENV === "production" &&
+    req.headers["x-forwarded-proto"] !== "https"
+  ) {
+    return res.redirect("https://" + req.headers.host + req.url);
   }
   next();
 });
@@ -109,8 +112,6 @@ app.use(
 
 app.use("/education", educationRouter);
 app.use("/admin", AdminAPIs);
-
-
 
 const assignToken = (userId) => {
   const token = jwt.sign({ userId }, JWT_SECRET);
@@ -155,12 +156,17 @@ app.use(
 const cspConfig = {
   directives: {
     defaultSrc: ["'self'"],
-    frameSrc: ["'self'", "https://www.google.com", "https://drive.google.com", "https://vercel.com"],
+    frameSrc: [
+      "'self'",
+      "https://www.google.com",
+      "https://drive.google.com",
+      "https://vercel.com",
+    ],
     connectSrc: [
       "'self'",
       "https://accounts.google.com",
       "https://cdn.socket.io",
-       "https://vercel.com"
+      "https://vercel.com",
     ],
     scriptSrc: [
       "'self'",
@@ -168,13 +174,13 @@ const cspConfig = {
       "https://cdnjs.cloudflare.com",
       "https://cdn.jsdelivr.net",
       "https://webrtc.github.io",
-      "https://vercel.com"
+      "https://vercel.com",
     ],
     imgSrc: [
       "'self'",
       "https://drive.google.com",
       "https://developers.google.com",
-       "https://vercel.com"
+      "https://vercel.com",
     ],
   },
 };
@@ -267,23 +273,19 @@ const isUserAuthenticated = async (req, res, next) => {
     const jwtToken = req.cookies.userToken;
 
     if (!jwtToken) {
-      return res
-        .status(401)
-        .json({
-          message: "Unauthorized: Missing token, Please login again",
-          error: "Unauthorized: Missing token, Please login again",
-        });
+      return res.status(401).json({
+        message: "Unauthorized: Missing token, Please login again",
+        error: "Unauthorized: Missing token, Please login again",
+      });
     }
 
     const decodedToken = jwt.verify(jwtToken, JWT_SECRET);
 
     if (!decodedToken || !decodedToken.userId) {
-      return res
-        .status(401)
-        .json({
-          message: "Unauthorized: Invalid token, Please login again",
-          error: "Unauthorized: Invalid token, Please login again",
-        });
+      return res.status(401).json({
+        message: "Unauthorized: Invalid token, Please login again",
+        error: "Unauthorized: Invalid token, Please login again",
+      });
     }
 
     const userId = decodedToken.userId;
@@ -303,12 +305,10 @@ const isUserAuthenticated = async (req, res, next) => {
     }
 
     if (userId !== userData._id.toString()) {
-      return res
-        .status(404)
-        .json({
-          message: "Some technical issue, please contact",
-          error: "Some technical issue, please contact",
-        });
+      return res.status(404).json({
+        message: "Some technical issue, please contact",
+        error: "Some technical issue, please contact",
+      });
     }
 
     req.userVerify = userId;
@@ -318,20 +318,16 @@ const isUserAuthenticated = async (req, res, next) => {
     console.error(error);
 
     if (error.name === "JsonWebTokenError") {
-      return res
-        .status(401)
-        .json({
-          message: "Unauthorized: Invalid token, Please login again",
-          error: "Unauthorized: Invalid token, Please login again",
-        });
+      return res.status(401).json({
+        message: "Unauthorized: Invalid token, Please login again",
+        error: "Unauthorized: Invalid token, Please login again",
+      });
     }
 
-    res
-      .status(500)
-      .json({
-        message: "Internal server error",
-        error: "Internal server error",
-      });
+    res.status(500).json({
+      message: "Internal server error",
+      error: "Internal server error",
+    });
   }
 };
 
@@ -368,13 +364,11 @@ app.post("/userLogin", async (req, res) => {
       sameSite: true,
     });
 
-    return res
-      .status(200)
-      .json({
-        status: 200,
-        message: "Login successful",
-        data: userData.userId,
-      });
+    return res.status(200).json({
+      status: 200,
+      message: "Login successful",
+      data: userData.userId,
+    });
   } catch (error) {
     console.error(error);
     return res
@@ -486,7 +480,8 @@ app.get("/home/Testimonials", async (req, res) => {
   }
 });
 
-app.route("/userAccountRegistration")
+app
+  .route("/userAccountRegistration")
   .get(async (req, res) => {
     try {
       const googleLogo =
@@ -968,7 +963,6 @@ app.post("/userUpdateEducation", isUserAuthenticated, async (req, res) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 });
-
 
 app.post("/deleteEducation", isUserAuthenticated, async (req, res) => {
   try {
@@ -1456,8 +1450,7 @@ app.post("/user-forgot-password", async (req, res) => {
     const otp = parseInt(randomBytes.toString("hex"), 16) % 1000000;
     const formattedOTP = otp.toString().padStart(6, "0");
 
-    const userProfileData = await Users
-      .findOne({ email: email.trim() })
+    const userProfileData = await Users.findOne({ email: email.trim() })
       .select("-password")
       .exec();
     if (!userProfileData) {
@@ -1478,11 +1471,9 @@ app.post("/user-forgot-password", async (req, res) => {
       )
     );
 
-    res
-      .status(202)
-      .json({
-        message: "Password reset instructions have been sent to your email.",
-      });
+    res.status(202).json({
+      message: "Password reset instructions have been sent to your email.",
+    });
   } catch (error) {
     console.error("Error handling password reset request:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -1550,12 +1541,10 @@ app.post("/change-user-password-reset", async (req, res) => {
     }
 
     if (!req.session.ableToChangePassword) {
-      return res
-        .status(403)
-        .json({
-          message: "User is not authorized to change password at this time.",
-          success: false,
-        });
+      return res.status(403).json({
+        message: "User is not authorized to change password at this time.",
+        success: false,
+      });
     }
 
     userProfileData.password = await bcrypt.hash(password, 10);
@@ -1697,6 +1686,113 @@ app.get("/auth/google", (req, res) => {
   res.redirect(googleAuthUrl);
 });
 
+// app.get("/auth/google/callback", async (req, res) => {
+//   try {
+//     const code = req.query.code;
+//     const { tokens } = await client.getToken(code);
+
+//     const userInfo = await client.verifyIdToken({
+//       idToken: tokens.id_token,
+//       audience: CLIENT_ID,
+//     });
+
+//     const payload = userInfo.getPayload();
+//     const firstName = payload.given_name;
+//     const lastName = payload.family_name;
+//     const email = payload.email;
+//     const phoneNumber = payload.phone_number;
+
+//     const existingUser = await Users.findOne({ email: email });
+
+//     if (existingUser) {
+//       req.session.userId = existingUser._id;
+//       return res.redirect("/login");
+//     } else {
+//       const newUser = new Users({
+//         Fname: firstName,
+//         Lname: lastName,
+//         userId: phoneNumber,
+//         email:email,
+//         verifiedByGoogle: true,
+//       });
+
+//       await newUser.save();
+
+//       const token = await jwt.sign({ userId: newUser._id }, JWT_SECRET, {
+//         expiresIn: "1h",
+//       });
+
+// const decodeToken =  jwt.verify(token,JWT_SECRET)
+// console.log("/auth/google/callback decode :  "+ decodeToken);
+//       res.cookie("userToken", token, {
+//         expires: new Date(Date.now() + 9000000),
+//         httpOnly: true,
+//         secure: true,
+//         sameSite: true,
+//       });
+//       const jwtToken = req.cookies.userToken;
+//       console.log("/auth/google/callback jwtToken : "+jwtToken)
+//       const savedUser = await newUser.save();
+//       req.session.userId = savedUser._id;
+//       res.redirect("/enter-password");
+//     }
+//   } catch (error) {
+//     console.error("Error exchanging authorization code for token:", error);
+//     res.status(500).send("Error exchanging authorization code for token");
+//   }
+// });
+
+// app.get("/auth/google/callback", async (req, res) => {
+//   try {
+//     const code = req.query.code;
+//     const { tokens } = await client.getToken(code);
+
+//     const userInfo = await client.verifyIdToken({
+//       idToken: tokens.id_token,
+//       audience: CLIENT_ID,
+//     });
+
+//     const payload = userInfo.getPayload();
+//     const firstName = payload.given_name;
+//     const lastName = payload.family_name;
+//     const email = payload.email;
+//     const phoneNumber = payload.phone_number;
+
+//     const existingUser = await Users.findOne({ email: email });
+
+//     if (existingUser) {
+//       req.session.userId = existingUser._id;
+//       return res.redirect("/login");
+//     } else {
+//       const newUser = new Users({
+//         Fname: firstName,
+//         Lname: lastName,
+//         userId: phoneNumber,
+//         email: email,
+//         verifiedByGoogle: true,
+//       });
+
+//       await newUser.save();
+
+//       const token = await jwt.sign({ userId: newUser._id }, JWT_SECRET, {
+//         expiresIn: "1h",
+//       });
+
+//       res.cookie("userToken", token, {
+//         expires: new Date(Date.now() + 9000000),
+//         httpOnly: true,
+//         secure: ,
+//         sameSite: 'lax',
+//       });
+
+//       req.session.userId = newUser._id;
+//       res.redirect("/enter-password");
+//     }
+//   } catch (error) {
+//     console.error("Error exchanging authorization code for token:", error);
+//     res.status(500).send("Error exchanging authorization code for token");
+//   }
+// });
 
 app.get("/auth/google/callback", async (req, res) => {
   try {
@@ -1734,13 +1830,13 @@ app.get("/auth/google/callback", async (req, res) => {
         expiresIn: "1h",
       });
 
-    res.cookie("userToken", token, {
-  expires: new Date(Date.now() + 9000000),
-  httpOnly: true,
-  secure: true,
-  sameSite: 'lax',
-});
-       
+      res.cookie("userToken", token, {
+        expires: new Date(Date.now() + 9000000),
+        httpOnly: true,
+        secure: true,
+        sameSite: "lax",
+      });
+
       req.session.userId = newUser._id;
       res.redirect("/enter-password");
     }
@@ -1748,19 +1844,16 @@ app.get("/auth/google/callback", async (req, res) => {
     console.error("Error exchanging authorization code for token:", error);
     res.status(500).send("Error exchanging authorization code for token");
   }
-});   
+});
 
-
-
-// i have made this for testing because many times after goggle login user is not able to add there password thats why this is for testing purposes 
+// i have made this for testing because many times after goggle login user is not able to add there password thats why this is for testing purposes
 
 // app.get("/deleteTestOnly",async(req,res)=>{
-//    const user = await Users.findOneAndDelete({email:''});
+//    const user = await Users.findOneAndDelete({testemail:''});
 //    if(user)
 //    {return res.json({message:'user deleted' + JSON.stringify(user)});}
 // res.json({error:'user not found'})
 // });
-
 
 app.get("/enter-password", isUserAuthenticated, async (req, res) => {
   res.render("./UserLogin/password-entry-form");
@@ -1837,12 +1930,10 @@ app.post("/get-homepage-info", async (req, res) => {
     res.status(200).json(homepageInfo);
   } catch (error) {
     console.error("Error fetching homepage information:", error);
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "An error occurred while fetching homepage information",
-      });
+    res.status(500).json({
+      success: false,
+      message: "An error occurred while fetching homepage information",
+    });
   }
 });
 
@@ -1951,8 +2042,8 @@ app.post("/send-video-call-info", isUserAuthenticated, async (req, res) => {
         return requestId;
       }
     }
-   requestId = await getRequestId();
-    console.log(requestId)
+    requestId = await getRequestId();
+    console.log(requestId);
 
     const newVideocallRequest = new VideocallRequest({
       requestId,
@@ -1964,13 +2055,24 @@ app.post("/send-video-call-info", isUserAuthenticated, async (req, res) => {
       status: "Pending",
     });
 
-        await newVideocallRequest.save();
+    await newVideocallRequest.save();
 
-        const videocallJoinUrl = `${WEB_URL}/joinvideocall/${email}/${requestId}`;
+    const videocallJoinUrl = `${WEB_URL}/joinvideocall/${email}/${requestId}`;
 
-        const logoUrl = `${WEB_URL}/get-logo-from-drive/Ankitpicture.png`;
+    const logoUrl = `${WEB_URL}/get-logo-from-drive/Ankitpicture.png`;
 
-       await sendMail(email, 'Information regarding join videocall', videocallReqmail(email, requesterFirstName, requesterLastName, timing, videocallJoinUrl,logoUrl))
+    await sendMail(
+      email,
+      "Information regarding join videocall",
+      videocallReqmail(
+        email,
+        requesterFirstName,
+        requesterLastName,
+        timing,
+        videocallJoinUrl,
+        logoUrl
+      )
+    );
 
     res
       .status(201)
@@ -2148,12 +2250,10 @@ app.post("/reschedule/videoCall", isUserAuthenticated, async (req, res) => {
         logoUrl
       )
     );
-    res
-      .status(200)
-      .json({
-        message: "Reschedule successful",
-        rescheduleDateTime: newRescheduleDateTimeUTC,
-      });
+    res.status(200).json({
+      message: "Reschedule successful",
+      rescheduleDateTime: newRescheduleDateTimeUTC,
+    });
   } catch (error) {
     console.error("Error processing reschedule request:", error);
     res.status(500).json({ message: "Internal Server Error" });
@@ -2285,10 +2385,10 @@ function emailTextForReschedule(
 }
 
 app.get("/adminjoinvideocall", (req, res) => {
-  res.render("./AdminFiles/admin-video-call",{roomId : "12345"});
+  res.render("./AdminFiles/admin-video-call", { roomId: "12345" });
 });
 app.get("/userjoinvideocall", (req, res) => {
-  res.render("./videocall/userVideoCallPage",{roomId : "12345"});
+  res.render("./videocall/userVideoCallPage", { roomId: "12345" });
 });
 
 // app.get('/joinvideocall/:userEmail/:requestId', async (req, res) => {
@@ -2435,18 +2535,18 @@ const io = new SocketIOServer(server);
 //   });
 // });
 
-io.on('connection', socket => {
-    // When someone attempts to join the room
-    socket.on('joinRoom', (roomId, userId) => {
-        socket.join(roomId)  // Join the room
-        socket.broadcast.emit('user-connected', userId) // Tell everyone else in the room that we joined
-        
-        // Communicate the disconnection
-        socket.on('disconnect', () => {
-            socket.broadcast.emit('user-disconnected', userId)
-        })
-    })
-})
+io.on("connection", (socket) => {
+  // When someone attempts to join the room
+  socket.on("joinRoom", (roomId, userId) => {
+    socket.join(roomId); // Join the room
+    socket.broadcast.emit("user-connected", userId); // Tell everyone else in the room that we joined
+
+    // Communicate the disconnection
+    socket.on("disconnect", () => {
+      socket.broadcast.emit("user-disconnected", userId);
+    });
+  });
+});
 const deleteAccountsTask = schedule.scheduleJob("0 0 * * *", async () => {
   try {
     const accountsToDelete = await Users.find({
@@ -2528,8 +2628,4 @@ export {
   WEB_URL,
 };
 
-
-
 export default app;
-
-
