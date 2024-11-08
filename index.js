@@ -145,11 +145,12 @@ app.use(
 const cspConfig = {
   directives: {
     defaultSrc: ["'self'"],
-    frameSrc: ["'self'", "https://www.google.com", "https://drive.google.com"],
+    frameSrc: ["'self'", "https://www.google.com", "https://drive.google.com", "https://vercel.com"],
     connectSrc: [
       "'self'",
       "https://accounts.google.com",
       "https://cdn.socket.io",
+       "https://vercel.com"
     ],
     scriptSrc: [
       "'self'",
@@ -157,11 +158,13 @@ const cspConfig = {
       "https://cdnjs.cloudflare.com",
       "https://cdn.jsdelivr.net",
       "https://webrtc.github.io",
+      "https://vercel.com"
     ],
     imgSrc: [
       "'self'",
       "https://drive.google.com",
       "https://developers.google.com",
+       "https://vercel.com"
     ],
   },
 };
