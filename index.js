@@ -1697,115 +1697,6 @@ app.get("/auth/google", (req, res) => {
   res.redirect(googleAuthUrl);
 });
 
-// app.get("/auth/google/callback", async (req, res) => {
-//   try {
-//     const code = req.query.code;
-//     const { tokens } = await client.getToken(code);
-
-//     const userInfo = await client.verifyIdToken({
-//       idToken: tokens.id_token,
-//       audience: CLIENT_ID,
-//     });
-
-//     const payload = userInfo.getPayload();
-//     const firstName = payload.given_name;
-//     const lastName = payload.family_name;
-//     const email = payload.email;
-//     const phoneNumber = payload.phone_number;
-
-//     const existingUser = await Users.findOne({ email: email });
-
-//     if (existingUser) {
-//       req.session.userId = existingUser._id;
-//       return res.redirect("/login");
-//     } else {
-//       const newUser = new Users({
-//         Fname: firstName,
-//         Lname: lastName,
-//         userId: phoneNumber,
-//         email:email,
-//         verifiedByGoogle: true,
-//       });
-
-//       await newUser.save();
-
-//       const token = await jwt.sign({ userId: newUser._id }, JWT_SECRET, {
-//         expiresIn: "1h",
-//       });
-
-// const decodeToken =  jwt.verify(token,JWT_SECRET)
-// console.log("/auth/google/callback decode :  "+ decodeToken);
-//       res.cookie("userToken", token, {
-//         expires: new Date(Date.now() + 9000000),
-//         httpOnly: true,
-//         secure: true,
-//         sameSite: true,
-//       });
-//       const jwtToken = req.cookies.userToken;
-//       console.log("/auth/google/callback jwtToken : "+jwtToken)
-//       const savedUser = await newUser.save();
-//       req.session.userId = savedUser._id;
-//       res.redirect("/enter-password");
-//     }
-//   } catch (error) {
-//     console.error("Error exchanging authorization code for token:", error);
-//     res.status(500).send("Error exchanging authorization code for token");
-//   }
-// });
-
-// app.get("/auth/google/callback", async (req, res) => {
-//   try {
-//     const code = req.query.code;
-//     const { tokens } = await client.getToken(code);
-
-//     const userInfo = await client.verifyIdToken({
-//       idToken: tokens.id_token,
-//       audience: CLIENT_ID,
-//     });
-
-//     const payload = userInfo.getPayload();
-//     const firstName = payload.given_name;
-//     const lastName = payload.family_name;
-//     const email = payload.email;
-//     const phoneNumber = payload.phone_number;
-
-//     const existingUser = await Users.findOne({ email: email });
-
-//     if (existingUser) {
-//       req.session.userId = existingUser._id;
-//       return res.redirect("/login");
-//     } else {
-//       const newUser = new Users({
-//         Fname: firstName,
-//         Lname: lastName,
-//         userId: phoneNumber,
-//         email: email,
-//         verifiedByGoogle: true,
-//       });
-
-//       await newUser.save();
-
-//       const token = await jwt.sign({ userId: newUser._id }, JWT_SECRET, {
-//         expiresIn: "1h",
-//       });
-
-     
-//       res.cookie("userToken", token, {
-//         expires: new Date(Date.now() + 9000000),
-//         httpOnly: true,
-//         secure: ,
-//         sameSite: 'lax',
-//       });
-
-//       req.session.userId = newUser._id;
-//       res.redirect("/enter-password");
-//     }
-//   } catch (error) {
-//     console.error("Error exchanging authorization code for token:", error);
-//     res.status(500).send("Error exchanging authorization code for token");
-//   }
-// });
-
 app.get("/auth/google/callback", async (req, res) => {
   try {
     const code = req.query.code;
@@ -1857,16 +1748,6 @@ app.get("/auth/google/callback", async (req, res) => {
     res.status(500).send("Error exchanging authorization code for token");
   }
 });   
-
-app.get("/deleteTestOnly",async(req,res)=>{
-   const user = await Users.findOneAndDelete({email:'it2033@global.org.in'});
-   if(user)
-   {
-   return res.json({message:'user deleted' + JSON.stringify(user)});
-   }
-res.json({error:'user not found'})
-
-});
 
 app.get("/enter-password", isUserAuthenticated, async (req, res) => {
   res.render("./UserLogin/password-entry-form");
