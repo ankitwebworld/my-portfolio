@@ -85,6 +85,14 @@ app.use(
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production' && req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect('https://' + req.headers.host + req.url);
+  }
+  next();
+});
+
 app.use(
   session({
     secret: JWT_SECRET,
@@ -101,6 +109,8 @@ app.use(
 
 app.use("/education", educationRouter);
 app.use("/admin", AdminAPIs);
+
+
 
 const assignToken = (userId) => {
   const token = jwt.sign({ userId }, JWT_SECRET);
@@ -1832,12 +1842,12 @@ app.get("/auth/google/callback", async (req, res) => {
         expiresIn: "1h",
       });
 
-      res.cookie("userToken", token, {
-        expires: new Date(Date.now() + 9000000),
-        httpOnly: true,
-        secure: false,
-        sameSite: 'lax', 
-      });
+    res.cookie("userToken", token, {
+  expires: new Date(Date.now() + 9000000),
+  httpOnly: true,
+  secure: true,
+  sameSite: 'lax',
+});
        
       req.session.userId = newUser._id;
       res.redirect("/enter-password");
@@ -1847,7 +1857,16 @@ app.get("/auth/google/callback", async (req, res) => {
     res.status(500).send("Error exchanging authorization code for token");
   }
 });   
- 
+
+app.get("/deleteTestOnly",async(req,res)=>{
+   const user = await Users.findOneAndDelete({email:'it2033@global.org.in'});
+   if(user)
+   {
+   return res.json({message:'user deleted' + JSON.stringify(user)});
+   }
+res.json({error:'user not found'})
+
+});
 
 app.get("/enter-password", isUserAuthenticated, async (req, res) => {
   res.render("./UserLogin/password-entry-form");
